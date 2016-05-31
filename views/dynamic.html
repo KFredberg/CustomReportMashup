@@ -1,0 +1,47 @@
+<!-- controller.dynic-->
+
+<div class="container-fluid">
+<div class="row">
+<div id="CurrentSelections"></div>
+<div class="col-md-2"> 
+              <div class="containerlabel">Dimensions</div>
+              <ul ng-sortable="dimensionConfig" class="sortablelist">
+             <li ng-class="dimension.labelClass" title="{{dimension.title +'\n' + dimension.description}}"  ng-repeat="dimension in dimensions">
+                  <div>{{dimension.title}}</div>
+                </li>
+          </ul>
+         
+          	<div class="containerlabel">Measures</div>
+          <ul  ng-sortable="measureConfig" class="sortablelist">
+             <li ng-class="measure.labelClass" title="{{measure.title +'\n' + measure.description}}"  ng-repeat="measure in measures">
+                 <div>{{measure.title}}</div>
+                </li>
+          </ul>
+</div>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-10"> 
+          <div class="containerlabel">Table</div>
+          <ul ng-sortable="reportConfig" class="sortablelist">
+             <li ng-class="item.labelClass" title="{{item.title +'\n' + item.description}}" ng-repeat="item in report">
+                 <div>{{item.title}}</div><span class="js-remove glyphicon glyphicon-remove" ng-click="removeItem(item)"></span>
+                 
+                </li>
+          </ul>
+</div>
+<!--
+<div class="col-md-10">
+
+<button ng-click="exportData({download:true})">Create Excel file</button> 
+                        <button ng-click="exportData({format:'CSV_C',download:true})">Create CSV file</button> 
+                      <button ng-click="exportData({format:'CSV_T',download:true})">Create TSV file</button> </div> -->
+<div class="col-md-10">
+    <div class="qvobject sixhundred" id="table"></div>
+  </div>
+    
+</div>
+  
+</div>
+</div>
+  
+</div>
